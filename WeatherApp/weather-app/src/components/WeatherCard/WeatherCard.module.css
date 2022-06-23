@@ -1,0 +1,12 @@
+.weather-card {
+    margin: 0 auto;
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "day": "MON",
+        "sky": "sunny",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "TUES",
+        "sky": "rainy",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "WED",
+        "sky": "rainy",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "THU",
+        "sky": "coludy",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "FRI",
+        "sky": "sunny",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "SAT",
+        "sky": "rainy",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    },
+    {
+        "day": "SUN",
+        "sky": "rainy",
+        "minTemp": 37.40,
+        "maxTemp": 40.12
+    }
+]
