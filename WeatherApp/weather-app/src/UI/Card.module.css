@@ -1,0 +1,20 @@
+.card {
+    background-color: white;
+    margin: 0rem auto;
+    padding: 1rem 0.5rem;
+    border-radius: 25px;
+    width: fit-content;
+}
+
+.card:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-card {
+    background-color: white;
+    margin: 0rem auto;
+    border-radius: 25px;
+    width: fit-content;
+    padding: 1rem 1.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}

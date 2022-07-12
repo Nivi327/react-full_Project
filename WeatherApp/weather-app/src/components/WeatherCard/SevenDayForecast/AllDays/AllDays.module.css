@@ -1,0 +1,38 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+
+.day {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 0 auto;
+}
+
+.img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem 0;
+}
+
+.temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.lower-temp {
+    font-size: 1rem;
+}
+
+.upper-temp {
+    font-size: 1rem;
+}
