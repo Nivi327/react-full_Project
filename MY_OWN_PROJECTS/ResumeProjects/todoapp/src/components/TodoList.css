@@ -1,0 +1,83 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.form input {
+  width: 30%;
+  height: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid yellowgreen;
+}
+
+.form button {
+  font-size: 1.2rem;
+  background-color: yellowgreen;
+  padding: 8px 15px;
+  border: 2px solid rgb(182, 246, 53);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.form button:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0.165);
+}
+
+.todo-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.todo-list li {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+
+li div {
+  font-size: 1.2rem;
+}
+
+li .text {
+  width: 13rem;
+  text-align: left;
+}
+
+li .start-time {
+  width: 10rem;
+  text-align: left;
+}
+
+li .end-time {
+  width: 10rem;
+  text-align: left;
+}
+
+.line {
+  width: 40%;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .form input {
+    width: 100%;
+  }
+
+  li div {
+    font-size: 0.8rem;
+  }
+}
