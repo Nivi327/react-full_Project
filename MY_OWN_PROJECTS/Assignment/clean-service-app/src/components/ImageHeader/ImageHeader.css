@@ -1,0 +1,106 @@
+.img-header {
+  width: 100%;
+}
+
+.bg-image {
+  position: absolute;
+  top: 77px;
+  width: 100%;
+  opacity: 1;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.route {
+  position: relative;
+  top: 1.2rem;
+  left: 2rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1rem 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.content .title {
+  font-family: "Mulish";
+  font-style: normal;
+  margin-top: 1.2rem;
+  color: white;
+  width: 40%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.description {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+.description h2 {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.description p {
+  font-weight: 400;
+  font-size: 21.3294px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+
+  color: #757575;
+}
+
+@media screen and (max-width: 1200px) {
+  .bg-image {
+    height: 60%;
+    opacity: 1;
+    background-color: #cccccc;
+    object-fit: fill;
+  }
+
+  .route {
+    position: relative;
+    top: 0.2rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin: 1rem 1rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .content .title {
+    font-family: "Mulish";
+    font-style: normal;
+    margin-top: 0.9rem;
+    color: white;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 600;
+    z-index: 10;
+  }
+
+  .description {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 6rem;
+  }
+}

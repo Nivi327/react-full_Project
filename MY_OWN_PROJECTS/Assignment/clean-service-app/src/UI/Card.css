@@ -1,0 +1,7 @@
+.ui-card {
+  background-color: white;
+  padding: 1.7rem;
+  z-index: 1;
+  border-radius: 10px;
+  border: 1px solid #7f7f7f;
+}

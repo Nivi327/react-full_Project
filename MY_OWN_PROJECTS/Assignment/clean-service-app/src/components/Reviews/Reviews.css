@@ -1,0 +1,55 @@
+.reviews {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.reviews h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.reviews h3 {
+  font-size: 1.8rem;
+  margin-left: 0.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.reviews .rating {
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.review-number {
+  color: #3c3c3c;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.reviews hr {
+  width: 100%;
+  border: 1px solid #bababa;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .reviews {
+    width: 90%;
+  }
+
+  .reviews h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .reviews h3 {
+    font-size: 1.6rem;
+  }
+
+  .reviews .rating {
+    font-size: 1.6rem;
+  }
+}

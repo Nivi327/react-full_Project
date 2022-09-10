@@ -1,0 +1,79 @@
+.faq {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.faq h2 {
+  text-align: center;
+}
+
+.accordion input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.accordion-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.accordion {
+  width: 100%;
+  color: black;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.accordion:last-child {
+  margin-bottom: 0;
+}
+.accordion-label {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f6f6f6;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+.accordion-label:hover {
+  background: #f6f6f6;
+}
+.accordion-label::after {
+  content: "\276F";
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accordion-content {
+  max-height: 0;
+  padding: 0 16px;
+  color: #f6f6f6;
+  background: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.accordion-content p {
+  margin: 0;
+  color: black;
+  font-size: 18px;
+}
+input:checked + .accordion-label {
+  background: #f6f6f6;
+}
+input:checked + .accordion-label::after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+input:checked ~ .accordion-content {
+  max-height: 100vh;
+  padding: 16px;
+}

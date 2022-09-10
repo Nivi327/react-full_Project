@@ -1,0 +1,36 @@
+.service-box {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.127);
+  padding: 0.8rem 2rem;
+}
+
+.service-box h1 {
+  font-size: 1.4rem;
+}
+
+.service-house {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-house p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  line-height: 1.3;
+}
+
+.service-house hr {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.624);
+}
+
+@media screen and (max-width: 768px) {
+  .service-box {
+    width: 95%;
+    padding: 0.8rem 0.5rem;
+  }
+}

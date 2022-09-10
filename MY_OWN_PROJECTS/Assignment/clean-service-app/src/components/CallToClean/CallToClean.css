@@ -1,0 +1,72 @@
+.select_mate {
+  position: relative;
+  font-family: "Roboto";
+  color: #777;
+  font-weight: 300;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 375ms ease-in-out;
+}
+
+.select_mate select {
+  overflow: scroll;
+  outline: none;
+  width: 290px;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(69, 69, 69, 0.741);
+  background-color: white;
+  padding: 0.4rem 5rem 0.4rem 0.3rem;
+}
+
+.name-phone {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+}
+
+select option {
+  background-color: #fff;
+}
+
+.name-phone input {
+  width: 122px;
+  border-radius: 0.3rem;
+  outline: none;
+  border: 1px solid rgba(69, 69, 69, 0.741);
+  padding: 0.4rem 0.3rem;
+}
+
+.pincode-address {
+  margin-top: 0.7rem;
+}
+
+.pincode-address input {
+  width: 290px;
+  outline: none;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.3rem;
+  border: 1px solid rgba(69, 69, 69, 0.741);
+}
+
+form .btn {
+  display: block;
+  background: #004c97;
+  border-radius: 0.3rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 2rem;
+  margin-top: 0.7rem;
+  color: white;
+  border: 1px solid #004385;
+  outline: none;
+}
+
+form p {
+  width: 290px;
+  color: #707070;
+  font-size: 12.5px;
+  margin-top: 0.7rem;
+  margin-left: 50%;
+  margin-bottom: 0px;
+  transform: translateX(-50%);
+}

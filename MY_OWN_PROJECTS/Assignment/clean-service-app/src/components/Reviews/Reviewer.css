@@ -1,0 +1,73 @@
+.reviewer {
+  margin-bottom: 1.5rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-details .user-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.user-details .user-location {
+  font-weight: 400;
+  line-height: 17px;
+
+  color: #7d7d7d;
+}
+
+.user-pic {
+  display: block;
+}
+
+.user-profile {
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  width: 85%;
+  color: black;
+  background: #d9d9d9;
+  border-radius: 4.28642px;
+}
+
+.user-rating {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.reviewer p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #393939;
+}
+
+@media screen and (max-width: 768px) {
+  .user-details .user-name {
+    font-size: 1rem;
+  }
+
+  .user-details .user-location {
+    line-height: 14px;
+    font-size: 0.8rem;
+  }
+
+  .reviewer p {
+    font-size: 0.95rem;
+    margin-top: 0.7rem;
+  }
+
+  .user-profile {
+    width: 75%;
+    padding: 0.7rem;
+  }
+}

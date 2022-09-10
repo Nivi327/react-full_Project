@@ -1,0 +1,23 @@
+.quick-links {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.quick-links h1 {
+  text-align: left;
+  font-size: 2.2rem;
+}
+
+.serving-in h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.1rem;
+}
+
+.serving-in p {
+  color: #7c7c7c;
+  font-size: 1.1rem;
+}
