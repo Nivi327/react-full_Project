@@ -1,11 +1,11 @@
-import React, { useContext, useReducer, useEffect } from 'react';
+import React, { useContext} from 'react';
 
 import classes from './WeatherCard.module.css';
 
 import MainCard from '../../UI/MainCard';
 import SevenDayForeCast from './SevenDayForecast/SevenDayForecast';
 import CurrentHour from './SevenDayForecast/CurrentHour/CurrentHour';
-import Area from './SevenDayForecast/Area/Area';
+// import Area from './SevenDayForecast/Area/Area';
 import WeatherContext from '../../store/weather-context';
 
 const WeatherCard = props => {

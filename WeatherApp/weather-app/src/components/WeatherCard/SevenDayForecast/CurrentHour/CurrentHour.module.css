@@ -3,8 +3,14 @@
     margin-left: 0.8rem;
 }
 
+.forecast-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .current-hour {
-    flex: 0.6;
+    flex: 0.65;
     display: flex;
     flex-direction: row;
     gap: 1.2rem;
@@ -14,7 +20,7 @@
 .current-temp {
     display: flex;
     flex-direction: row;
-    gap: 1.2rem;
+    gap: 1rem;
     margin: 0.75rem 1rem;
 }
 
@@ -33,4 +39,27 @@
     flex-direction: column;
     font-size: 1.5rem;
     margin: 0.75rem 1rem;
+}
+
+@media screen and (max-width:980px) and (min-width:800px) {
+    .forecast-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .forecast-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .weather-data {
+        display: flex;
+        flex-direction: column;
+    }
+    .data {
+        font-size: 1.2rem;
+    }
 }

@@ -7,8 +7,8 @@ import WeatherProvider from './store/WeatherProvider';
 function App() {
   return (
     <React.Fragment>
-      <Header />
       <WeatherProvider>
+        <Header />
         <WeatherCard />
       </WeatherProvider>
     </React.Fragment>

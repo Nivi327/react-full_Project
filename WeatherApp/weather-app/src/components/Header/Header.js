@@ -6,7 +6,7 @@ import classes from './Header.module.css';
 const Header = props => {
     return <div className={classes.header}>
         <span className={classes.name}>My Weather App</span>
-        <Input type="text" id="search" placeholder="search for your place.." />
+        <Input type="text" id="search" placeholder="search for your place.." name="search"/>
     </div>
 };
 

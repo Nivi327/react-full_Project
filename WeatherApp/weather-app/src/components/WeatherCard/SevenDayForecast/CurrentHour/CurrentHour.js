@@ -15,10 +15,11 @@ import area_classes from '../Area/Area.module.css';
 const CurrentHour = props => {
 
     const weatherCtx = useContext(WeatherContext);
+    console.log(weatherCtx);
 
     const currentWeather = weatherCtx.currentWeather;
 
-    const precipitation = currentWeather.precip_mm;
+    const precipitation = currentWeather.precipitation;
 
     const location = weatherCtx.location;
 
@@ -27,9 +28,9 @@ const CurrentHour = props => {
     const currentCondition = currentWeather.weatherCondition;
 
     const todaySkyCondition = () => {
-        if (currentWeather.weatherCondition.includes("rain")) {
+        if (currentWeather.weatherCondition && currentWeather.weatherCondition.includes("rain")) {
             return "rainy"
-        } else if (currentWeather.weatherCondition.includes("sun")) {
+        } else if (currentWeather.WeatherContext && currentWeather.weatherCondition.includes("sun")) {
             return "sunny"
         }
         return "cloudy"
@@ -42,36 +43,38 @@ const CurrentHour = props => {
                     CurrentHour Weather ForeCast
                 </h3>
             </div>
-            <div className={classes['current-hour']}>
-                <div>
-                    {todaySkyCondition() === "sunny" ? <img src={sunny} className={img_classes.img} /> : (todaySkyCondition() === "rainy" ? <img src={rain_cloudy} className={img_classes.img} /> : <img src={partly_cloudy} className={img_classes.img} />)}
-                </div>
-                <div className={classes['current-temp']}>
-                    <span className={classes.number}>{currentWeather.temp_c} </span>
-                    <div className={classes.units}>
-                        <span>&deg;C  </span>
+            <div className={classes['forecast-details']}>
+                <div className={classes['current-hour']}>
+                    <div className={classes['weather-data']}>
+                        <div>
+                            {todaySkyCondition() === "sunny" ? <img src={sunny} className={img_classes.img} alt="sunny" /> : (todaySkyCondition() === "rainy" ? <img src={rain_cloudy} className={img_classes.img} alt="rainy" /> : <img src={partly_cloudy} className={img_classes.img} alt="cloudy" />)}
+                        </div>
+                        <div className={classes['current-temp']}>
+                            <span className={classes.number}>{currentWeather.temp_c} </span>
+                            <div className={classes.units}>
+                                <span>&deg;C  </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classes.data}>
+                        <span><strong>Precipitation(in mm):</strong> {precipitation} </span>
+                        <span><strong>Humidity:</strong> {currentWeather.humidity}%</span>
+                        <span><strong>WindSpeed:</strong> {currentWeather.wind_kph} kmph</span>
                     </div>
                 </div>
-                <div className={classes.data}>
-                    <span>Precipitation(in mm): {precipitation} </span>
-                    <span>Humidity: {currentWeather.humidity}%</span>
-                    <span>WindSpeed: {currentWeather.wind_kph} kmph</span>
+                <div className={area_classes.area}>
+                    <div className={area_classes.place}>
+                        <span>{location.name}, {location.region}</span>
+                    </div>
+                    <div className={area_classes.details}>
+                        <span>{time}</span>
+                    </div>
+                    <div className={area_classes.details}>
+                        <span>{currentCondition || "Sunny"}</span>
+                    </div>
                 </div>
             </div>
         </Card>
-        {/* <Card>
-            <div className={area_classes.area}>
-                <div className={area_classes.place}>
-                    <span>{location.name}, {location.region}</span>
-                </div>
-                <div className={area_classes.details}>
-                    <span>{time}</span>
-                </div>
-                <div className={area_classes.details}>
-                    <span>{currentCondition || "Sunny"}</span>
-                </div>
-            </div>
-        </Card> */}
     </React.Fragment>
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import classes from './AllDays.module.css';
 
@@ -8,27 +8,52 @@ import rain_cloudy from './../../../../assets/rain_cloudy.png';
 
 import Card from '../../../../UI/Card';
 
-import dummy_data from './../../../../sample-json/Data.json';
+import WeatherContext from '../../../../store/weather-context';
 
 const AllDays = props => {
-    return <div className={classes.cards}>
-        {
-            dummy_data.map(data => {
-                return <Card key={data.day}>
-                    <div className={classes.card}>
-                        <span className={classes.day}>{data.day}</span>
-                        <div>
-                            {data.sky === "sunny" ? <img src={sunny} className={classes.img} /> : (data.sky === "rainy" ? <img src={rain_cloudy} className={classes.img} /> : <img src={partly_cloudy} className={classes.img} />)}
-                        </div>
-                        <div className={classes.temp}>
-                            <span className={classes['lower-temp']}>{data.minTemp.toFixed(1)}&deg;C</span>
-                            <span className={classes['upper-temp']}>{data.maxTemp.toFixed(1)}&deg;C</span>
-                        </div>
-                    </div>
-                </Card>
-            })
+    const weatherCtx = useContext(WeatherContext);
+    const hourlyWeather = weatherCtx.hourlyWeather;
+    const from_now = hourlyWeather.filter((data) => {
+        const new_date = new Date(data.time);
+        const now = new Date(Date.now())
+        if (data.condition.text.trim().includes('rain')) {
+            data.sky = 'rainy';
         }
-    </div>
+        else if (data.condition.text.trim().includes('cloud')) {
+            data.sky = "cloudy";
+        }
+        else {
+            data.sky = "sunny";
+        }
+        return new_date.getHours() >= now.getHours();
+    });
+    console.log(from_now);
+    return <>
+        <div className={classes.heading}>
+            <h1>Hourly weather Forecast</h1>
+        </div><div className={classes.cards}>
+            {
+                from_now.map(data => {
+                    return <Card key={data.time_epoch}>
+                        <div className={classes.card}>
+                            <span className={classes.day}>{data.time.split(' ')[1]}</span>
+                            <div style={{ textAlign: 'center' }}>
+                                {data.sky === "sunny" ? <img src={sunny} className={classes.img} alt="sunny" /> : (data.sky === "rainy" ? <img src={rain_cloudy} className={classes.img} alt="rainy" /> : <img src={partly_cloudy} className={classes.img} alt="cloudy" />)}
+                            </div>
+                            <div className={classes.temp}>
+                                <span className={classes['lower-temp']}><strong>Temp(&deg;C):</strong> {data.temp_c}</span>
+                                <span className={classes['lower-temp']}><strong>Humidity:</strong> {data.humidity}</span>
+                                <span className={classes['lower-temp']}><strong>Wind_speed:</strong> {data.wind_kph}kmph</span>
+                                <span className={classes['lower-temp']}><strong>Wind_dir:</strong> {data.wind_dir}</span>
+                                <span className={classes['lower-temp']}><strong>Wind_degree:</strong> {data.wind_degree}</span>
+
+                            </div>
+                        </div>
+                    </Card>
+                })
+            }
+        </div>
+    </>
 };
 
 export default AllDays;

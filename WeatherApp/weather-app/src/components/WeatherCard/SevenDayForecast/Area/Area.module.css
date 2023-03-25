@@ -1,9 +1,8 @@
 .area {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    margin: 2.4rem 1rem;
-    width: 50%;
+    margin: 2.4rem 0rem;
+    flex: 0.35;
     float: right;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .details {
-    color: rgba(91, 91, 91, 0.66);
+    color: rgba(50, 50, 50, 0.66);
     font-size: 1.3rem;
     margin-top: 0.75rem;
 }

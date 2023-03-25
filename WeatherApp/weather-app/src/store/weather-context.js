@@ -5,7 +5,8 @@ const WeatherContext = React.createContext({
     hourlyWeather: [],
     location: {},
     loading: false,
-    error: null
+    error: null,
+    changeCity:(city) => {}
 });
 
 export default WeatherContext;

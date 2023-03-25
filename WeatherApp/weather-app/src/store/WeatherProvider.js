@@ -5,6 +5,8 @@ const initialData = {
     currentWeather: {},
     hourlyWeather: [],
     location: {},
+    city: {},
+    enteredCity: 'london',
     loading: false,
     error: null
 }
@@ -16,6 +18,11 @@ const weatherReducer = (state, action) => {
         return { ...state, loading: action.loading };
     } else if (action.type === 'ERROR') {
         return { ...state, error: action.error };
+    } else if (action.type === 'LOCATION') {
+        return { ...state, city: action.city };
+    } else if(action.type === 'CHANGE_CITY') {
+        console.log(action.enteredCity);
+        return {...state, enteredCity:action.enteredCity};
     }
     return initialData;
 }
@@ -24,10 +31,15 @@ const WeatherProvider = props => {
 
     const [weatherData, dispatchWeatherData] = useReducer(weatherReducer, initialData);
 
+    const changeCity = (city) => {
+        dispatchWeatherData({type:'CHANGE_CITY', enteredCity: city});
+    }
+
     const getCurrentWeatherData = async () => {
         dispatchWeatherData({ type: 'LOADING', loading: true })
         try {
-            const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=541d21e46cb04ecab29103103221306&q=16.9891,82.2475');
+            console.log(weatherData);
+            const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=541d21e46cb04ecab29103103221306&q=${weatherData.enteredCity}`);
 
             if (!response.ok) {
                 throw new Error('Something Went Wrong');
@@ -43,18 +55,20 @@ const WeatherProvider = props => {
                 weatherCondition: data.current.condition.text,
             }
 
-            const hourlyWeather = data.forecast.forecastday[0].hour
-            const location = {
-                name: data.current.location.name,
-                region: data.current.location.region,
-                localtime: data.current.location.localtime
-            }
-
+            console.log(data);
             console.log(currentWeather);
+
+            let hourlyWeather = data.forecast.forecastday[0].hour
+            let location = {
+                name: data.location.name,
+                region: data.location.region,
+                localtime: data.location.localtime
+            }
 
             dispatchWeatherData({ type: 'WEATHER_DATA', currentWeather: currentWeather, hourlyWeather: hourlyWeather, location: location });
 
         } catch (error) {
+            console.log(error);
             dispatchWeatherData({ type: 'ERROR', error: error });
         }
         dispatchWeatherData({ type: 'LOADING', loading: false });
@@ -62,18 +76,18 @@ const WeatherProvider = props => {
 
     useEffect(() => {
         getCurrentWeatherData();
-    }, []);
-
+    }, [weatherData.enteredCity]);
 
     const weatherContext = {
         currentWeather: weatherData.currentWeather,
         hourlyWeather: weatherData.hourlyWeather,
         loading: weatherData.loading,
         location: weatherData.location,
-        error: weatherData.error
+        error: weatherData.error,
+        changeCity: changeCity
     }
 
-    console.log(weatherContext);
+    // console.log(weatherContext);
 
     return <WeatherContext.Provider value={weatherContext}>
         {props.children}

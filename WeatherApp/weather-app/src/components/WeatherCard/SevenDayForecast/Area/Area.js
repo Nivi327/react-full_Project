@@ -16,6 +16,7 @@ const Area = props => {
 
     const time = localtime;
 
+    console.log(weatherCtx.currentWeather);
     const currentCondition = weatherCtx.currentWeather.condition.text;
 
     return <Card>
