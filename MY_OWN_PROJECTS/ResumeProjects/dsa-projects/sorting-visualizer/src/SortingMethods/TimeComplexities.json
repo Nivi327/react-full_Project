@@ -1,0 +1,26 @@
+{
+    "MergeSort":{
+        "Best": "N*logN",
+        "Average": "N*logN",
+        "Worst": "N*logN",
+        "Space": "N"
+    },
+    "BubbleSort": {
+        "Best": "N",
+        "Average": "N*N",
+        "Worst": "N*N",
+        "Space": "1"
+    },
+    "InsertionSort": {
+        "Best": "N",
+        "Average": "N*N",
+        "Worst": "N*N",
+        "Space": "1"
+    },
+    "SelectionSort": {
+        "Best": "N*N",
+        "Average": "N*N",
+        "Worst": "N*N",
+        "Space": "1"
+    }
+}

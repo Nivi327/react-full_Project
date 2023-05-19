@@ -1,0 +1,175 @@
+.div-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 50%;
+    padding-bottom: 1rem;
+    width: 90%;
+    transform: translateX(-50%);
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btns button {
+    background-color: #00ED64;
+    outline: none;
+    border: 1px solid #00684A;
+    border-radius: 10px;
+    font-size: 18px;
+    color: rgba(42, 42, 42, 0.732);
+    font-weight: 600;
+    padding: 10px 18px;
+    margin-top: 0.7rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: 0.2s ease-in;
+}
+
+.btns button:hover {
+    font-size: 24px;
+}
+
+.bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30%;
+}
+
+.noofbars,
+.barspeed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.noofbars label,
+.barspeed label {
+    font-size: 18px;
+    margin-top: 0.5rem;
+    color: rgba(255, 253, 253, 0.907);
+    font-weight: 600;
+}
+
+.noofbars input,
+.barspeed input {
+    width: 150%;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #00ED64;
+    border: 1px solid #00684A;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -12px;
+    background-color: #00684A;
+    height: 2rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #00684A;
+    outline-offset: 0.125rem;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #00ED64;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 10px;
+    background-color: #00684A;
+    height: 2rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid #00684A;
+    outline-offset: 0.125rem;
+}
+
+.div-bar {
+    width: 6px;
+    margin: 0 1px;
+    display: inline-block;
+    background-color: rgba(0, 157, 255, 0.8);
+}
+
+.div-table {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-table h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.div-table tr td {
+    border-left: 2px solid #00ED64;
+}
+
+.div-table tr td,
+.div-table tr th {
+    border-bottom: 2px solid #00ED64;
+    color: white;
+    padding: 0.8rem 1rem;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1080px) {
+    .div-container {
+        width: 95%;
+    }
+
+    .bars {
+        gap: 25%;
+    }
+
+    .noofbars input,
+    .barspeed input {
+        width: 120%;
+    }
+
+    .div-table {
+        width: 90%;
+    }
+
+}
