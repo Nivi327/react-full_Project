@@ -12,7 +12,7 @@ const catergorySchema = new mongoose.Schema({
         unique: true
     },
     parentId: {
-        trpe: String
+        type: String
     }
 }, {timestamps: true});
 

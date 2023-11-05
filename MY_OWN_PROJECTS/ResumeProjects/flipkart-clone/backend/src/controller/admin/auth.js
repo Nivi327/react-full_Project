@@ -66,7 +66,7 @@ exports.signIn = (req, res) => {
                     })
                 }
                 else {
-                    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+                    const token = jwt.sign({ _id: user._id, role:user.role }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
                     const { _id, firstName, lastName, username, email, role, fullName } = user;
                     return res.status(200).json({
                         token,
